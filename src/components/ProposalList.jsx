@@ -10,11 +10,11 @@ export default function ProposalList(){
             Desc="Request For proposal for establishing fencing around the delhi stadium, in Nehru Stadium located in new delhi."
             />
             <ProposalListItem 
-            TitleName="Request For proposal for establishing fencing around the delhi stadium" 
+            TitleName="Request For proposal for Requirements of Sports Kit" 
             Desc="Request For proposal for establishing fencing around the delhi stadium, in Nehru Stadium located in new delhi."
             />
             <ProposalListItem 
-            TitleName="Request For proposal for establishing fencing around the delhi stadium" 
+            TitleName="Request For proposal for organising an Event of Archery." 
             Desc="Request For proposal for establishing fencing around the delhi stadium, in Nehru Stadium located in new delhi."
             />
         </div>

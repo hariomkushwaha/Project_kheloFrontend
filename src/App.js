@@ -1,16 +1,12 @@
 import "./App.css";
-import LogoBar from './components/LogoBar';
-import TitleRibbon from './components/TitleRibbon';
-import ProposalList from './components/ProposalList';
+import {Route} from 'react-router-dom';
+import HomePage from "./components/HomePage";
 
 function App() {
   return (
-    <div className="App">
-      <LogoBar />
-      <TitleRibbon title="Proposals" bgColor="rgba(196,23,23,1)"/>
-      <br /><br />
-      <ProposalList />
-    </div>
+    <Route path="/">
+        <HomePage />
+    </Route>
   );
 }
 

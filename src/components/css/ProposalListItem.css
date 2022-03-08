@@ -20,6 +20,7 @@ body{
     font-size:1.15rem;
     text-transform: uppercase;
     padding:10px 20px;
+    border-bottom:2px solid #CACACA;
 }
 .ProposalBody{
     width:100%;
