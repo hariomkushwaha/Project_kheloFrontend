@@ -1,10 +1,16 @@
 import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
 import Typography from "@mui/material/Typography";
+import PropsalForm from "./components/ProposalForm";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
-      <Typography variant="h2">Khelo India SIH</Typography>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="pform" element={<PropsalForm />} />
+      </Routes>
     </div>
   );
 }
