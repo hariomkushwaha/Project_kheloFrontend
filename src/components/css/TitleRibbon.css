@@ -12,12 +12,12 @@ body{
     height:100px;
 }
 .TitleRibbon{
-    height:100px;
+    height:75px;
     width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding:20px 10px;
+    padding:15px 10px;
 }
 .TitleRibbon h1{
     color:white;

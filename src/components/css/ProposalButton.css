@@ -1,0 +1,23 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.ProposalButton{
+    background:white;
+    border:2px solid rgb(240, 179, 49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:rgb(240, 179, 49);
+    font-weight:500;
+    font-size:1.1rem;
+    padding:10px;
+    border-radius:5px;
+    margin:25px;
+}
+.ProposalButton:hover{
+    color:white;
+    background:rgb(240, 179, 49);
+    cursor: pointer;
+}
