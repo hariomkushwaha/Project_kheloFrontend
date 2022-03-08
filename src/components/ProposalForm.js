@@ -12,9 +12,9 @@ import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import A from './A';
-import B from './B';
-import C from './C';
+import BasicDetail from './BasicDetail';
+import TenderFeeDetail from './TenderFeeDetail';
+import CriticalDate from './CriticalDate';
 
 function Copyright() {
   return (
@@ -34,11 +34,11 @@ const steps = ['Shipping address', 'Payment details', 'Review your order'];
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <A/>;
+      return <BasicDetail/>;
     case 1:
-      return <B />;
+      return <TenderFeeDetail/>;
     case 2:
-      return <C />;
+      return <CriticalDate />;
     default:
       throw new Error('Unknown step');
   }

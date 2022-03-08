@@ -5,36 +5,38 @@ import TextField from '@mui/material/TextField';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import Checkbox from '@mui/material/Checkbox';
 
-export default function A() {
+export default function basicDetail() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
         Shipping address
       </Typography>
       <Grid container spacing={3}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
+          
           <TextField
             required
-            id="firstName"
-            name="firstName"
-            label="First name"
+            id="ReferenceNumber"
+            name="ReferenceNumber"
+            label="Reference Number"
             fullWidth
             autoComplete="given-name"
             variant="standard"
+            type="number"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="lastName"
-            name="lastName"
-            label="Last name"
+            id="TenderId"
+            name="TenderId"
+            label="Tender Id"
             fullWidth
             autoComplete="family-name"
             variant="standard"
           />
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="address1"

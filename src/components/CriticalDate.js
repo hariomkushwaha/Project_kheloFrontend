@@ -37,7 +37,7 @@ const payments = [
   { name: 'Expiry date', detail: '04/2024' },
 ];
 
-export default function C() {
+export default function CriticalDate() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
