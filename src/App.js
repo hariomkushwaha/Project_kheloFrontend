@@ -1,10 +1,11 @@
 import "./App.css";
 import Typography from "@mui/material/Typography";
+import LogoBar from './components/LogoBar';
 
 function App() {
   return (
     <div className="App">
-      <Typography variant="h2">Khelo India SIH</Typography>
+      <LogoBar />
     </div>
   );
 }
