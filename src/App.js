@@ -1,6 +1,5 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
-import Typography from "@mui/material/Typography";
+import { Routes, Route } from "react-router-dom";
 import ProposalForm from "./components/ProposalForm";
 import Home from "./components/Home";
 import ProponentForm from "./components/ProponentForm";
