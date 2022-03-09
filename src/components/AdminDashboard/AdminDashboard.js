@@ -17,6 +17,7 @@ import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 import ExpandableCard from "./ExpandableCard";
+import ExpandableCard2 from "./ExpandableCard2";
 
 const drawerWidth = 240;
 
@@ -145,27 +146,10 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-               {/* Card */}
+              {/* Card */}
               <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
+                <ExpandableCard />
+                <ExpandableCard2 />
               </Grid>
             </Grid>
           </Container>
