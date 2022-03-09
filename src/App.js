@@ -11,8 +11,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="pform" element={<ProposalForm />} />
-        <Route path="aform" element={<ProponentForm />} />
+        <Route path="aform" element={<ProposalForm />} />
+        <Route path="pform" element={<ProponentForm />} />
         <Route path="admin" element={<AdminDashboard />} />
         <Route path="padmin" element={<ProponentDashboard />} />
       </Routes>
