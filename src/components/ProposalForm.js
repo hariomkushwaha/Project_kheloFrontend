@@ -9,25 +9,11 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Button from '@mui/material/Button';
-import Link from '@mui/material/Link';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import BasicDetail from './BasicDetail';
 import TenderFeeDetail from './TenderFeeDetail';
 import CriticalDate from './CriticalDate';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
 
 const steps = ["Basic Details", "Tender Fee Details", "Critical Dates"];
 
@@ -124,7 +110,6 @@ export default function ProposalForm() {
             )}
           </React.Fragment>
         </Paper>
-        <Copyright />
       </Container>
     </ThemeProvider>
   );

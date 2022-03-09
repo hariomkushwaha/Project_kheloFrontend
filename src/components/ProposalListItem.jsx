@@ -14,7 +14,7 @@ export default function ProposalListItem(props){
                 </div>
                 <div className='ProposalBtnGrp'>
                     <ProposalButton value="Download" link=""/>
-                    <ProposalButton value="Apply" link=""/>
+                    <ProposalButton value="Apply" link="/pform"/>
                 </div>
             </div>
         </div>
