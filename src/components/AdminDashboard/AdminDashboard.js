@@ -151,43 +151,26 @@ function DashboardContent() {
                {/* Card */}
               <Grid item xs={12} md={12} lg={12}>
                   <ExpandableCard />
-                </Grid>
-              {/* Chart */}
-              <Grid item xs={12} md={12} lg={12}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  <Chart />
-                </Paper>
               </Grid>
-              
-              {/* Recent Deposits */}
               <Grid item xs={12} md={12} lg={12}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: "flex",
-                    flexDirection: "column",
-                    height: 240,
-                  }}
-                >
-                  <Deposits />
-                </Paper>
+                  <ExpandableCard />
               </Grid>
-              
-              {/* Recent Orders */}
-              {/* <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
-                  <Orders />
-                </Paper>
-              </Grid> */}
+              <Grid item xs={12} md={12} lg={12}>
+                  <ExpandableCard />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                  <ExpandableCard />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                  <ExpandableCard />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                  <ExpandableCard />
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                  <ExpandableCard />
+              </Grid>
             </Grid>
-            {/* <Copyright sx={{ pt: 4 }} /> */}
           </Container>
         </Box>
       </Box>

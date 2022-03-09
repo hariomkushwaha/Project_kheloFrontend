@@ -16,19 +16,6 @@ import BasicDetail from './BasicDetail';
 import TenderFeeDetail from './TenderFeeDetail';
 import CriticalDate from './CriticalDate';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
-
 const steps = ["Basic Details", "Tender Fee Details", "Critical Dates"];
 
 function getStepContent(step) {
@@ -124,7 +111,6 @@ export default function ProposalForm() {
             )}
           </React.Fragment>
         </Paper>
-        <Copyright />
       </Container>
     </ThemeProvider>
   );
