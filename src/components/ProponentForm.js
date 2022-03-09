@@ -14,19 +14,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import PersonalDetails from "./PersonalDetails";
 import ProposalDetails from "./ProposalDetails";
 import PreviousRecord from "./PreviousRecord";
-
-// function Copyright() {
-//   return (
-//     <Typography variant="body2" color="text.secondary" align="center">
-//       {"Copyright © "}
-//       <Link color="inherit" href="https://mui.com/">
-//         Your Website
-//       </Link>{" "}
-//       {new Date().getFullYear()}
-//       {"."}
-//     </Typography>
-//   );
-// }
+import IconButton from "@mui/material/IconButton";
+import HomeIcon from "@mui/icons-material/Home";
 
 const steps = ["Personal Details", "Proposal Details", "Previous Record"];
 
@@ -50,6 +39,11 @@ export default function ProponentForm() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if (activeStep === 2) {
+      setTimeout((event) => {
+        window.location.href = "/";
+      }, 10000);
+    }
   };
 
   const handleBack = () => {
@@ -61,7 +55,7 @@ export default function ProponentForm() {
       <CssBaseline />
       <AppBar
         position="absolute"
-        color="default"
+        color="primary"
         elevation={0}
         sx={{
           position: "relative",
@@ -69,9 +63,18 @@ export default function ProponentForm() {
         }}
       >
         <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
+          <Typography
+            component="h1"
+            variant="h6"
+            color="inherit"
+            noWrap
+            sx={{ flexGrow: 1 }}
+          >
+            KHELO INDIA
           </Typography>
+          <IconButton color="inherit">
+            <HomeIcon onClick={(event) => (window.location.href = "/")} />
+          </IconButton>
         </Toolbar>
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
@@ -93,13 +96,14 @@ export default function ProponentForm() {
             {activeStep === steps.length ? (
               <React.Fragment>
                 <Typography variant="h5" gutterBottom>
-                  Thank you for your order.
+                  Thank you for your proposal.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
-                </Typography>
+                  Your proposal is successfully submitted to Proposal Number -
+                  #123450. We will send you an update when your proposal will be
+                  reviewed.
+                  </Typography>
+                <Typography variant="caption">You'll be redirected to Home Page in 10 seconds.</Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>

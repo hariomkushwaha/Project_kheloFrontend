@@ -8,15 +8,16 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import Badge from "@mui/material/Badge";
+import UploadIcon from '@mui/icons-material/Upload';
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import NotificationsIcon from "@mui/icons-material/Notifications";
+import Button from '@mui/material/Button';
 import { mainListItems, secondaryListItems } from "./listItems";
 import ExpandableCard from "./ExpandableCard";
+import IconButton from "@mui/material/IconButton";
+import HomeIcon from "@mui/icons-material/Home";
 
 const drawerWidth = 240;
 
@@ -104,10 +105,11 @@ function DashboardContent() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={4} color="secondary">
-                <NotificationsIcon />
-              </Badge>
+                  <HomeIcon onClick={event =>  window.location.href='/'} />
             </IconButton>
+            <Button variant="contained" color="secondary" endIcon={<UploadIcon />} href="/aform">
+    Post a Proposal
+</Button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -145,27 +147,9 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
             <Grid container spacing={3}>
-               {/* Card */}
+              {/* Card */}
               <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
-              </Grid>
-              <Grid item xs={12} md={12} lg={12}>
-                  <ExpandableCard />
+                <ExpandableCard />
               </Grid>
             </Grid>
           </Container>

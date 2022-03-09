@@ -14,7 +14,8 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import BasicDetail from './BasicDetail';
 import TenderFeeDetail from './TenderFeeDetail';
 import CriticalDate from './CriticalDate';
-
+import IconButton from "@mui/material/IconButton";
+import HomeIcon from "@mui/icons-material/Home";
 const steps = ["Basic Details", "Tender Fee Details", "Critical Dates"];
 
 function getStepContent(step) {
@@ -37,6 +38,11 @@ export default function ProposalForm() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
+    if (activeStep === 2) {
+      setTimeout((event) => {
+        window.location.href = "/admin";
+      }, 10000);
+    }
   };
 
   const handleBack = () => {
@@ -48,18 +54,28 @@ export default function ProposalForm() {
       <CssBaseline />
       <AppBar
         position="absolute"
-        color="default"
+        color="primary"
         elevation={0}
         sx={{
           position: "relative",
           borderBottom: (t) => `1px solid ${t.palette.divider}`,
         }}
       >
-        <Toolbar>
-          <Typography variant="h6" color="inherit" noWrap>
-            Company name
-          </Typography>
-        </Toolbar>
+      <Toolbar>
+      <Typography
+        component="h1"
+        variant="h6"
+        color="inherit"
+        noWrap
+        sx={{ flexGrow: 1 }}
+      >
+        KHELO INDIA
+      </Typography>
+      <IconButton color="inherit">
+        <HomeIcon onClick={(event) => (window.location.href = "/")} />
+      </IconButton>
+    </Toolbar>
+  
       </AppBar>
       <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
         <Paper
@@ -83,10 +99,9 @@ export default function ProposalForm() {
                   Thank you for your order.
                 </Typography>
                 <Typography variant="subtitle1">
-                  Your order number is #2001539. We have emailed your order
-                  confirmation, and will send you an update when your order has
-                  shipped.
-                </Typography>
+                  Your proposal #123450 is successfully Posted on Server. You can see the applied candidates on your Dashboard Now.
+                  </Typography>
+                <Typography variant="caption">You'll be redirected to your Dashboard in 10 seconds.</Typography>
               </React.Fragment>
             ) : (
               <React.Fragment>
