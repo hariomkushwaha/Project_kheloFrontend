@@ -3,8 +3,10 @@ import './css/ProposalButton.css';
 
 export default function ProposalButton(props){
     return(
-        <div className="ProposalButton">
-            <span>{props.value}</span>
-        </div>
+        <a href={props.link} className="ProposalLink">
+            <div className="ProposalButton">
+                <span>{props.value}</span>
+            </div>
+        </a>
     );
 }

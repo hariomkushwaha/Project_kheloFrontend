@@ -8,14 +8,13 @@ export default function ProposalListItem(props){
             <div className='ProposalTitle'>
                 {props.TitleName}
             </div>
-            <hr />
             <div className='ProposalBody'>
                 <div className='ProposalDesc'>
                     {props.Desc}
                 </div>
                 <div className='ProposalBtnGrp'>
-                    <ProposalButton value="Download"/>
-                    <ProposalButton value="Apply"/>
+                    <ProposalButton value="Download" link=""/>
+                    <ProposalButton value="Apply" link=""/>
                 </div>
             </div>
         </div>
