@@ -1,7 +1,6 @@
 import * as React from "react";
-import { DataGrid, GridLinkOperator } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import Stack from "@mui/material/Stack";
-import Typography from "@mui/material/Typography";
 
 const rows = [
   {
