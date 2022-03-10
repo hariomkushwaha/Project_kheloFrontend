@@ -16,7 +16,9 @@ import TenderFeeDetail from './TenderFeeDetail';
 import CriticalDate from './CriticalDate';
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
-const steps = ["Basic Details", "Tender Fee Details", "Critical Dates"];
+import EMDFeeDetail from './EMDFeeDetail';
+import WorkItemDetail from './WorkItemDetail';
+const steps = ["Basic Details","Tender Fee Details","EMD Fee Details","Work Item Details", "Critical Dates"];
 
 function getStepContent(step) {
   switch (step) {
@@ -25,6 +27,10 @@ function getStepContent(step) {
     case 1:
       return <TenderFeeDetail/>;
     case 2:
+        return <EMDFeeDetail/>;
+    case 3:
+          return <WorkItemDetail/>;
+    case 4:
       return <CriticalDate />;
     default:
       throw new Error("Unknown step");
@@ -38,7 +44,7 @@ export default function ProposalForm() {
 
   const handleNext = () => {
     setActiveStep(activeStep + 1);
-    if (activeStep === 2) {
+    if (activeStep === 4) {
       setTimeout((event) => {
         window.location.href = "/admin";
       }, 10000);
@@ -77,7 +83,7 @@ export default function ProposalForm() {
     </Toolbar>
   
       </AppBar>
-      <Container component="main" maxWidth="sm" sx={{ mb: 4 }}>
+      <Container component="main" maxWidth="md" sx={{ mb: 4 }}>
         <Paper
           variant="outlined"
           sx={{ my: { xs: 3, md: 6 }, p: { xs: 2, md: 3 } }}

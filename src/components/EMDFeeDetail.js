@@ -1,82 +1,72 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
+import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
-
-export default function PersonalDetails() {
+export default function TenderFeeDetail() {
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
-       Basic Details
+        Tender Fee Details
       </Typography>
       <Grid container spacing={3}>
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="fullName"
-            name="Full Name"
-            label="Full Name"
+            id="emdFee"
+            name="EmdFee"
+            label="EMD Fee in ruppee"
             fullWidth
-            // autoComplete="given-name"
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="emdPercentage"
+            name="EmdPercentage"
+            label="EMD Percentage"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="emdPayableTo"
+            name="EmdPayableTo"
+            label="EMD payable to"
+            fullWidth
+            autoComplete="given-name"
             variant="standard"
           />
         </Grid>
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="organizationName"
-            name="OrganizationName"
-            label="Organization Name"
+            id="emdPayableAt"
+            name="emdPayableAt"
+            label="EMD payable at"
             fullWidth
-            // autoComplete="given-name"
+            autoComplete="given-name"
             variant="standard"
           />
         </Grid>
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="email"
-            name="Email"
-            label="Email"
+            id="emdFeeType"
+            name="EmdFeeType"
+            label="EMD Fee Type"
             fullWidth
-            // autoComplete="given-name"
-            variant="standard"
-            type="email"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            required
-            id="fullAddress"
-            name="FullAddress"
-            label="Full Address"
-            fullWidth
-            autoComplete="shipping address-line1"
+            autoComplete="given-name"
             variant="standard"
           />
         </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            id="state"
-            name="state"
-            label="State/Province/Region"
-            fullWidth
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            required
-            id="zip"
-            name="zip"
-            label="Zip / Postal code"
-            fullWidth
-            autoComplete="shipping postal-code"
-            variant="standard"
-          />
-        </Grid>
-       </Grid>
-      
+      </Grid>
     </React.Fragment>
   );
 }

@@ -22,6 +22,17 @@ export default function BasicDetail() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
+            id="organizationChain"
+            name="OrganizationChain"
+            label="Organisation Chain"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
             id="ReferenceNumber"
             name="ReferenceNumber"
             label="Reference Number"
@@ -31,12 +42,67 @@ export default function BasicDetail() {
             type="number"
           />
         </Grid>
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={12}>
           <TextField
             required
             id="TenderId"
             name="TenderId"
             label="Tender Id"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="Item"
+            name="Item"
+            label="Itemwise technical evaluation allowed"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <TextField
+            required
+            id="tenderType"
+            name="TenderType"
+            label="Tender type"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="generalTechnical"
+            name="GeneralTechnical"
+            label="General technical evaluation allowed"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="PaymentMode"
+            name="PaymentMode"
+            label="Payment mode offline"
+            fullWidth
+            autoComplete="family-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <TextField
+            required
+            id="stageBiding"
+            name="StageBiding"
+            label="Allowed two stage biding"
             fullWidth
             autoComplete="family-name"
             variant="standard"

@@ -12,21 +12,9 @@ export default function TenderFeeDetail() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="TenderFee"
-            name="TenderFee"
-            label="Tender Fee in ruppee"
-            fullWidth
-            autoComplete="given-name"
-            variant="standard"
-            type="number"
-          />
-        </Grid>
-        <Grid item xs={12} sm={12}>
-          <TextField
-            required
-            id="feePayableTo"
-            name="FeePayableTo"
-            label="Fee payable to"
+            id="title"
+            name="Title"
+            label="Title"
             fullWidth
             autoComplete="given-name"
             variant="standard"
@@ -35,9 +23,9 @@ export default function TenderFeeDetail() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="tenderFeeExemption"
-            name="TenderFeeExemption"
-            label="Tender Fee Exemption"
+            id="workDescription"
+            name="WorkDescription"
+            label="Work Description"
             fullWidth
             autoComplete="given-name"
             variant="standard"
@@ -46,9 +34,20 @@ export default function TenderFeeDetail() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="feePayableAt"
-            name="FeePayableAt"
-            label="Fee payable at"
+            id="prequalification"
+            name="Prequalification"
+            label="Pre-qualification"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
+            id="independentExternal"
+            name="IndependentExternal"
+            label="Independent External Monitor/Remarks"
             fullWidth
             autoComplete="given-name"
             variant="standard"
