@@ -80,7 +80,7 @@ export default function RecipeReviewCard() {
             </CardContent>
           </Collapse>
         </Grid>
-        <Grid item xs={1} style={{ borderLeft: "1px solid rgba(0,0,0,0.15)", display:"flex", justifyContent:"center", alignItems:"center"}}>
+        <Grid item xs={1} onClick={handleExpandClick} style={{ borderLeft: "1px solid rgba(0,0,0,0.15)", display:"flex", justifyContent:"center", alignItems:"center", cursor:"pointer"}}>
           <CardActions disableSpacing>
             <ExpandMore
               expand={expanded}

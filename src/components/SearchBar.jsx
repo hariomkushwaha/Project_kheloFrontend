@@ -7,7 +7,7 @@ import Container from "@mui/material/Container";
 
 export default function CustomizedInputBase() {
   return (
-    <Container
+    <div
       style={{
         display: "flex",
         justifyContent: "center",
@@ -15,16 +15,15 @@ export default function CustomizedInputBase() {
         width:'100vw',
       }}
     >
-      <Paper
-        component="form"
-        sx={{
+      <div
+        style={{
           p: "5px 10px",
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-end",
-          width: '100%',
+          width: '70%',
+          boxShadow: '3px 3px 10px rgba(0,0,0,0.25)',
         }}
-        elevation="4"
       >
         {/* 
       <IconButton sx={{ p: '10px' }} aria-label="menu">
@@ -39,7 +38,7 @@ export default function CustomizedInputBase() {
         <IconButton type="submit" sx={{ p: "10px" }} aria-label="search">
           <SearchIcon />
         </IconButton>
-      </Paper>
-    </Container>
+      </div>
+    </div>
   );
 }
