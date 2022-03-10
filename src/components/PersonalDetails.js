@@ -24,6 +24,17 @@ export default function PersonalDetails() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
+            id="organizationName"
+            name="OrganizationName"
+            label="Organization Name"
+            fullWidth
+            // autoComplete="given-name"
+            variant="standard"
+          />
+        </Grid>
+        <Grid item xs={12} sm={12}>
+          <TextField
+            required
             id="email"
             name="Email"
             label="Email"
@@ -36,26 +47,15 @@ export default function PersonalDetails() {
         <Grid item xs={12} sm={12}>
           <TextField
             required
-            id="address"
-            name="address"
-            label="Address"
+            id="fullAddress"
+            name="FullAddress"
+            label="Full Address"
             fullWidth
             autoComplete="shipping address-line1"
             variant="standard"
           />
         </Grid>
-        <Grid item xs={12} sm={6}>
-          <TextField
-            required
-            id="city"
-            name="city"
-            label="City"
-            fullWidth
-            autoComplete="shipping address-level2"
-            variant="standard"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={12}>
           <TextField
             id="state"
             name="state"
