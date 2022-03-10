@@ -8,8 +8,10 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Grid from "@mui/material/Grid";
-import ExpandableCard2 from './ExpandableCard2'; 
+import ExpandableCard2 from "./ExpandableCard2";
 
+import { DataGrid } from "@mui/x-data-grid";
+import Stack from "@mui/material/Stack";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -18,9 +20,80 @@ const ExpandMore = styled((props) => {
   transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
   marginLeft: "auto",
   transition: theme.transitions.create("transform", {
-  duration: theme.transitions.duration.shortest,
+    duration: theme.transitions.duration.shortest,
   }),
 }));
+
+const rows = [
+  {
+    proponent: "Diamond",
+    amount: 20000,
+    completedProposals: 2,
+    turnover: 100300,
+    experience: 3,
+    id: 1,
+  },
+  {
+    proponent: "Luna",
+    amount: 120000,
+    completedProposals: 2,
+    turnover: 400000,
+    experience: 7,
+    id: 2,
+  },
+  {
+    proponent: "Hailie",
+    amount: 100000,
+    completedProposals: 5,
+    turnover: 10000,
+    experience: 2,
+    id: 3,
+  },
+  {
+    proponent: "Alexis Rowe",
+    amount: 500000,
+    completedProposals: 9,
+    turnover: 1550000,
+    experience: 12,
+    id: 4,
+  },
+  {
+    proponent: "Rowe",
+    amount: 5000000,
+    completedProposals: 9,
+    turnover: 1550000,
+    experience: 12,
+    id: 5,
+  },
+];
+
+const columns = [
+  { field: "proponent", headerName: "Proponent", width: 200, type: "text" },
+  {
+    field: "amount",
+    headerName: "Amount",
+    type: "number",
+    width: 200,
+  },
+  {
+    field: "completedProposals",
+    headerName: "Completed Proposals",
+    type: "number",
+    width: 200,
+  },
+  {
+    field: "turnover",
+    headerName: "Turnover (3yrs)",
+    type: "number",
+    width: 200,
+  },
+  {
+    field: "experience",
+    headerName: "Experience",
+    type: "number",
+    width: 200,
+  },
+];
 
 export default function RecipeReviewCard() {
   const [expanded, setExpanded] = React.useState(false);
@@ -32,9 +105,19 @@ export default function RecipeReviewCard() {
   return (
     <Card sx={{ maxWidth: "100%" }}>
       <Grid container spacing={2}>
-        <Grid item xs={11}>
+        <Grid item xs={12}>
           <CardContent>
-            <Grid container spacing={4}>
+            <Stack style={{ width: "100%" }} alignItems="center" spacing={2}>
+              <div style={{ height: 400, width: "100%" }}>
+                <DataGrid
+                  rows={rows}
+                  columns={columns}
+                  // autoPageSize
+                  autoHeight
+                />
+              </div>
+            </Stack>
+            {/* <Grid container spacing={4}>
               <Grid item xs={4}>
                 <Typography variant="h6" component="div">
                   Proponent
@@ -71,16 +154,25 @@ export default function RecipeReviewCard() {
                     9 years
                 </Typography>
               </Grid>
-            </Grid>
+            </Grid> */}
           </CardContent>
 
-          <Collapse in={expanded} timeout="auto" unmountOnExit>
+          {/* <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-               <ExpandableCard2 /> 
+              <ExpandableCard2 />
             </CardContent>
-          </Collapse>
+          </Collapse> */}
         </Grid>
-        <Grid item xs={1} style={{ borderLeft: "1px solid rgba(0,0,0,0.15)", display:"flex", justifyContent:"center", alignItems:"center"}}>
+        {/* <Grid
+          item
+          xs={1}
+          style={{
+            borderLeft: "1px solid rgba(0,0,0,0.15)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
           <CardActions disableSpacing>
             <ExpandMore
               expand={expanded}
@@ -91,7 +183,7 @@ export default function RecipeReviewCard() {
               <ExpandMoreIcon />
             </ExpandMore>
           </CardActions>
-        </Grid>
+        </Grid> */}
       </Grid>
     </Card>
   );

@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useState } from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -8,17 +8,25 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import UploadIcon from '@mui/icons-material/Upload';
+import UploadIcon from "@mui/icons-material/Upload";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
-import Button from '@mui/material/Button';
-import { mainListItems, secondaryListItems } from "./listItems";
+import Button from "@mui/material/Button";
+// import { mainListItems, secondaryListItems } from "./listItems";
 import ExpandableCard from "./ExpandableCard";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
 
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import BarChartIcon from "@mui/icons-material/BarChart";
+import ListIcon from "@mui/icons-material/List";
+import CompareIcon from "@mui/icons-material/Compare";
+import CompareView from "./CompareView";
+import AnalyticsView from "./AnalyticsView";
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -68,10 +76,12 @@ const Drawer = styled(MuiDrawer, {
 const mdTheme = createTheme();
 
 function DashboardContent() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  const [current, setCurrent] = useState("list");
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -105,11 +115,16 @@ function DashboardContent() {
               Dashboard
             </Typography>
             <IconButton color="inherit">
-                  <HomeIcon onClick={event =>  window.location.href='/'} />
+              <HomeIcon onClick={(event) => (window.location.href = "/")} />
             </IconButton>
-            <Button variant="contained" color="secondary" endIcon={<UploadIcon />} href="/aform">
-    Post a Proposal
-</Button>
+            <Button
+              variant="contained"
+              color="secondary"
+              endIcon={<UploadIcon />}
+              href="/aform"
+            >
+              Post a Proposal
+            </Button>
           </Toolbar>
         </AppBar>
         <Drawer variant="permanent" open={open}>
@@ -127,9 +142,27 @@ function DashboardContent() {
           </Toolbar>
           <Divider />
           <List component="nav">
-            {mainListItems}
-            <Divider sx={{ my: 1 }} />
-            {secondaryListItems}
+            <ListItemButton onClick={() => setCurrent("list")}>
+              <ListItemIcon>
+                <ListIcon />
+              </ListItemIcon>
+              <ListItemText primary="List View" />
+            </ListItemButton>
+            <ListItemButton onClick={() => setCurrent("compare")}>
+              <ListItemIcon>
+                <CompareIcon />
+              </ListItemIcon>
+              <ListItemText primary="Compare" />
+            </ListItemButton>
+            <ListItemButton onClick={() => setCurrent("analytics")}>
+              <ListItemIcon>
+                <BarChartIcon />
+              </ListItemIcon>
+              <ListItemText primary="Analytics" />
+            </ListItemButton>
+            {/* {mainListItems} */}
+            {/* <Divider sx={{ my: 1 }} />
+            {secondaryListItems} */}
           </List>
         </Drawer>
         <Box
@@ -149,7 +182,9 @@ function DashboardContent() {
             <Grid container spacing={3}>
               {/* Card */}
               <Grid item xs={12} md={12} lg={12}>
-                <ExpandableCard />
+                {current === "list" ? <ExpandableCard /> : ""}
+                {current === "compare" ? <CompareView /> : ""}
+                {current === "analytics" ? <AnalyticsView /> : ""}
               </Grid>
             </Grid>
           </Container>
