@@ -185,7 +185,7 @@ function DashboardContent() {
               <Grid item xs={12} md={12} lg={12}>
                 {current === "list" ? <CardsCompare /> : ""}
                 {current === "compare" ? <CompareView /> : ""}
-                {current === "analytics" ? <> <AnalyticsView /> <ExpandableCard /> </>: ""}
+                {current === "analytics" ? <div> <AnalyticsView /> <ExpandableCard /> </div>: ""}
               </Grid>
             </Grid>
           </Container>

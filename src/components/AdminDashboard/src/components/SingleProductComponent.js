@@ -30,9 +30,9 @@ class SingleProductComponent extends React.Component {
     const product = this.props.product;
     return (
       <React.Fragment>
-      <Box sx={{ minWidth: 275 }}>
+      <Box sx={{ minWidth: 275, padding:"5px", margin:"15px" }}>
       
-      <Card variant="outlined">
+      <Card variant="outlined" sx={{padding:"15px"}}>
         <CardContent>
           <Typography variant="h5" color="text.secondary" gutterBottom>
             License : {product.LicenseID}
