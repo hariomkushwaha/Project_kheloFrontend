@@ -19,7 +19,7 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems} from './ListItem';
 import Progress from './Progress';
 import PersonalDetails from './PersonalDetails';
-
+import ExpandableCard2 from '../AdminDashboard/ExpandableCard2';
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -168,6 +168,19 @@ function DashboardContent() {
                   }}
                 >
                     <Progress />
+                
+                </Paper>
+              </Grid>
+              <Grid item xs={12} md={12} lg={12}>
+                <Paper
+                  sx={{
+                    p: 2,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    height: 500,
+                  }}
+                >
+                 <ExpandableCard2 />
                 
                 </Paper>
               </Grid>
