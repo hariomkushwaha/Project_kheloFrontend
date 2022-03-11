@@ -6,9 +6,24 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
+import Rating from '@mui/material/Rating';
 
 export default function ProposalDetails() {
   const [category, setCategory] = useState("service");
+  const [quality, setQuality] = useState("");
+  const [durability, setDurability] = useState("");
+  const [usability, setUsability] = useState("");
+  
+  const qualityHandler = (e) =>{
+    setQuality(e.target.value)
+  }
+  const durabilityHandler = (e) =>{
+    setDurability(e.target.value)
+  }
+  const usabilityHandler = (e) =>{
+    setUsability(e.target.value);
+  }
+
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -110,6 +125,49 @@ export default function ProposalDetails() {
             type="number"
           />
         </Grid>
+        <Grid item xs={12}>
+        <TextField
+            required
+            id="quality"
+            name="Quality"
+            label="Quality"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={qualityHandler}
+            value={quality}
+          />
+
+</Grid>
+<Grid item xs={12} >
+<TextField
+            required
+            id="usability"
+            name="Usability"
+            label="Usability"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={usabilityHandler}
+            value={usability}
+          />
+</Grid>
+<Grid item xs={12}>
+<TextField
+            required
+            id="durability"
+            name="Durability"
+            label="Durability"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={durabilityHandler}
+            value={durability}
+          />
+</Grid>
 
         <Grid item xs={12} md={12}>
           <Button variant="contained" component="label">
@@ -124,6 +182,7 @@ export default function ProposalDetails() {
             label="I have checked the above details"
           />
         </Grid>
+  
       </Grid>
     </>
   );
