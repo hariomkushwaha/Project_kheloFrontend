@@ -4,6 +4,7 @@ import TitleRibbon from "./TitleRibbon";
 import ProposalList from "./ProposalList";
 import SearchBar from "./SearchBar";
 
+import DummyTender from "./AdminDashboard/DummyTender";
 const Home = () => {
   return (
     <div className="HomePage">
