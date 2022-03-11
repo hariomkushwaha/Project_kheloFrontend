@@ -1,10 +1,11 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import ProposalForm from "./components/ProposalForm";
 import Home from "./components/Home";
 import ProponentForm from "./components/ProponentForm";
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import ProponentDashboard from "./components/ProponentDashboard/ProponentDashboard";
+import Comparison from './components/AdminDashboard/CompareCard';
+import ComparePage from './components/AdminDashboard/src/CompareCard'
 
 function App() {
   return (

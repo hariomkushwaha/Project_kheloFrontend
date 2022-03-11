@@ -1,11 +1,11 @@
 import React from "react";
+import ComparisonTable from './src/components/TableComponent';
 
 const CompareView = () => {
   return (
-    <>
-      <h1>Welcome to </h1>
-      <div>CompareView</div>
-    </>
+    <div>
+      <ComparisonTable />
+    </div>
   );
 };
 

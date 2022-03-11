@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState,createContext, React } from "react";
 import { styled, createTheme, ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import MuiDrawer from "@mui/material/Drawer";
@@ -11,14 +11,13 @@ import Divider from "@mui/material/Divider";
 import UploadIcon from "@mui/icons-material/Upload";
 import Container from "@mui/material/Container";
 import Grid from "@mui/material/Grid";
-import MenuIcon from "@mui/icons-material/Menu";
+import WidgetsIcon from '@mui/icons-material/Widgets';
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Button from "@mui/material/Button";
 // import { mainListItems, secondaryListItems } from "./listItems";
 import ExpandableCard from "./ExpandableCard";
 import IconButton from "@mui/material/IconButton";
 import HomeIcon from "@mui/icons-material/Home";
-
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -27,6 +26,8 @@ import ListIcon from "@mui/icons-material/List";
 import CompareIcon from "@mui/icons-material/Compare";
 import CompareView from "./CompareView";
 import AnalyticsView from "./AnalyticsView";
+import CardsCompare from './src/components/ProductComponent';
+
 const drawerWidth = 240;
 
 const AppBar = styled(MuiAppBar, {
@@ -103,7 +104,7 @@ function DashboardContent() {
                 ...(open && { display: "none" }),
               }}
             >
-              <MenuIcon />
+              <WidgetsIcon />
             </IconButton>
             <Typography
               component="h1"
@@ -182,9 +183,9 @@ function DashboardContent() {
             <Grid container spacing={3}>
               {/* Card */}
               <Grid item xs={12} md={12} lg={12}>
-                {current === "list" ? <ExpandableCard /> : ""}
+                {current === "list" ? <CardsCompare /> : ""}
                 {current === "compare" ? <CompareView /> : ""}
-                {current === "analytics" ? <AnalyticsView /> : ""}
+                {current === "analytics" ? <ExpandableCard /> : ""}
               </Grid>
             </Grid>
           </Container>
