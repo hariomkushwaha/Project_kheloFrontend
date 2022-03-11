@@ -6,9 +6,14 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
+import Rating from '@mui/material/Rating';
 
 export default function ProposalDetails() {
   const [category, setCategory] = useState("service");
+  const [quality, setQuality] = useState(0);
+  const [durability, setDurability] = useState(0);
+  const [usability, setUsability] = useState(0);
+
   return (
     <>
       <Typography variant="h6" gutterBottom>
@@ -110,6 +115,44 @@ export default function ProposalDetails() {
             type="number"
           />
         </Grid>
+        <Grid item xs={12}  md={4}>
+        <Typography component="legend">Quality</Typography>
+        </Grid>
+        <Grid item xs={12}  md={8}>
+      <Rating
+  name="simple-controlled"
+  value={quality}
+  onChange={(event, newValue) => {
+    setQuality(newValue);
+  }}
+/>
+</Grid>
+<Grid item xs={12}  md={4}>
+<Typography component="legend">Durabilty</Typography>
+</Grid>
+<Grid item xs={12}  md={8}>
+
+      <Rating
+  name="simple-controlled"
+  value={durability}
+  onChange={(event, newValue) => {
+    setDurability(newValue);
+  }}
+/>
+</Grid>
+<Grid item xs={12}  md={4}>
+
+<Typography component="legend">Usability</Typography>
+</Grid>
+<Grid item xs={12}  md={8}>
+      <Rating
+  name="simple-controlled"
+  value={usability}
+  onChange={(event, newValue) => {
+    setUsability(newValue);
+  }}
+/>
+</Grid>
 
         <Grid item xs={12} md={12}>
           <Button variant="contained" component="label">
@@ -124,6 +167,7 @@ export default function ProposalDetails() {
             label="I have checked the above details"
           />
         </Grid>
+  
       </Grid>
     </>
   );
