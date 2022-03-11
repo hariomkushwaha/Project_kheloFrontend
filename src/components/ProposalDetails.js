@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
@@ -6,23 +6,23 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
-import Rating from '@mui/material/Rating';
+import Rating from "@mui/material/Rating";
 
 export default function ProposalDetails() {
   const [category, setCategory] = useState("service");
   const [quality, setQuality] = useState("");
   const [durability, setDurability] = useState("");
   const [usability, setUsability] = useState("");
-  
-  const qualityHandler = (e) =>{
-    setQuality(e.target.value)
-  }
-  const durabilityHandler = (e) =>{
-    setDurability(e.target.value)
-  }
-  const usabilityHandler = (e) =>{
+
+  const qualityHandler = (e) => {
+    setQuality(e.target.value);
+  };
+  const durabilityHandler = (e) => {
+    setDurability(e.target.value);
+  };
+  const usabilityHandler = (e) => {
     setUsability(e.target.value);
-  }
+  };
 
   return (
     <>
@@ -126,7 +126,7 @@ export default function ProposalDetails() {
           />
         </Grid>
         <Grid item xs={12}>
-        <TextField
+          <TextField
             required
             id="quality"
             name="Quality"
@@ -138,10 +138,9 @@ export default function ProposalDetails() {
             onChange={qualityHandler}
             value={quality}
           />
-
-</Grid>
-<Grid item xs={12} >
-<TextField
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
             required
             id="usability"
             name="Usability"
@@ -153,9 +152,9 @@ export default function ProposalDetails() {
             onChange={usabilityHandler}
             value={usability}
           />
-</Grid>
-<Grid item xs={12}>
-<TextField
+        </Grid>
+        <Grid item xs={12}>
+          <TextField
             required
             id="durability"
             name="Durability"
@@ -167,7 +166,7 @@ export default function ProposalDetails() {
             onChange={durabilityHandler}
             value={durability}
           />
-</Grid>
+        </Grid>
 
         <Grid item xs={12} md={12}>
           <Button variant="contained" component="label">
@@ -182,7 +181,6 @@ export default function ProposalDetails() {
             label="I have checked the above details"
           />
         </Grid>
-  
       </Grid>
     </>
   );
