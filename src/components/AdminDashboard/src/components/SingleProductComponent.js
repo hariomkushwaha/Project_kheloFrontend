@@ -35,10 +35,10 @@ class SingleProductComponent extends React.Component {
       <Card variant="outlined">
         <CardContent>
           <Typography variant="h5" color="text.secondary" gutterBottom>
-            Title : {product.Title}
+            License : {product.LicenseID}
           </Typography>
           <Typography variant="h6" component="div">
-            Organisation : {product.Organisation}
+            Organisation : {product.Organization}
           </Typography>
         </CardContent>
         <CardActions>

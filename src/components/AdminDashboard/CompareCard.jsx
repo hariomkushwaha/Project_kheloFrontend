@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DummyTender from './DummyTender';
-import CompareList from './Compare';
+import ProponentDetails from '../ProponentDashboard/ProponentDetails';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -99,7 +99,7 @@ export default function CompareCard() {
 
   return (
     <div className="CompareCard">
-        {DummyTender.map(ComparisonCard)}
+        {ProponentDetails.map(ComparisonCard)}
     </div>
     );
 }

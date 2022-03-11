@@ -12,24 +12,24 @@ const ComparisonCard = (props) => {
               color="text.secondary"
               gutterBottom
             >
-              Tender ID: {props.prod.TenderID}
+              License ID: {props.prod.LicenseID}
             </Typography>
             <Typography variant="body2" component="div">
-              Tender Reference Number: {props.prod.TenderReferenceNumber}
+              Full Name: {props.prod.FullName}
             </Typography>
             <Typography variant="h6" color="text.secondary">
-              Organisation: {props.prod.Organisation}
+              Organisation: {props.prod.Organization}
             </Typography>
             <Typography variant="h6">
-              Tender Value: {props.prod.TenderValue}
+              Total Cost: {props.prod.TotalCost}
               <br />
             </Typography>
             <Typography variant="body2">
-              EMD Amount: {props.prod.EmdAmount}
+              Duration (in Months): {props.prod.Duration}
               <br />
             </Typography>
             <Typography variant="body1">
-              Tender Fee: {props.prod.TenderFee}
+              Category: {props.prod.Category}
               <br />
             </Typography>
           </CardContent>
