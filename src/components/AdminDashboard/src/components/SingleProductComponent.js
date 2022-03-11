@@ -19,6 +19,7 @@ class SingleProductComponent extends React.Component {
     });
   };
 
+
   removeProduct = (product) => {
     this.props.removeProduct(product);
     this.setState({
@@ -39,6 +40,18 @@ class SingleProductComponent extends React.Component {
           </Typography>
           <Typography variant="h6" component="div">
             Organisation : {product.Organization}
+          </Typography>
+          <Typography variant="body2" component="div">
+            Durability : {product.Durability}
+          </Typography>
+          <Typography variant="body2" component="div">
+            Usability : {product.Usability}
+          </Typography>
+          <Typography variant="body2" component="div">
+            Quality : {product.Quality}
+          </Typography>
+          <Typography variant="body2" component="div">
+            Total : {product.Total} /5
           </Typography>
         </CardContent>
         <CardActions>
