@@ -1,55 +1,31 @@
 import React from "react";
 import { connect } from "react-redux";
 import { removeProduct } from "../actions/index";
-import Col from "react-bootstrap/Col";
-import Table from "react-bootstrap/Table";
-
+import Box from "@mui/material/Box";
+import Card from "@mui/material/Card";
+import ComparisonCard from "./ComparisonCard";
 class TableComponent extends React.Component {
-  removeProduct = product => {
+  removeProduct = (product) => {
     this.props.removeProduct(product);
   };
 
   render() {
     return (
-      <Col md={{ span: 10, offset: 1 }}>
-        <Table hover className="tableProducts">
-          <thead>
-            <tr>
-            <th>Tender ID</th>
-            <th>Tender Reference Number</th>
-            <th>Organisation</th>
-            <th>Tender Value</th>
-            <th>EMD Amount</th>
-            <th>Tender Fee</th>
-            </tr>
-          </thead>
-          <tbody>
-            {this.props.products.map(product => {
-              return (
-                <tr key={product.TenderID}>
-                  <td>{product.TenderID}</td>
-                  <td>{product.TenderReferenceNumber}</td>
-                  <td>{product.Organisation}</td>
-                  <td>{product.TenderValue}</td>
-                  <td>{product.EmdAmount}</td>
-                  <td>{product.TenderFee}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </Table>
-      </Col>
+        <Box sx={{ minWidth: 275 }}>
+          <Card variant="outlined">
+              {this.props.products.map((product) => {
+                return <ComparisonCard prod={product} />;
+              })}
+          </Card>
+        </Box>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    products: state.products
+    products: state.products,
   };
 };
 
-export default connect(
-  mapStateToProps,
-  { removeProduct }
-)(TableComponent);
+export default connect(mapStateToProps, { removeProduct })(TableComponent);
