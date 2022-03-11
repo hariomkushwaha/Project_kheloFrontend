@@ -7,10 +7,24 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import DatePicker from "@mui/lab/DatePicker";
 
 export default function CriticalDate() {
-  const [value, setValue] = React.useState(new Date());
+  const [publish, setPublish] = React.useState(new Date().toLocaleDateString('en-IN'));
+  const [bidOpening, setBidOpening] = React.useState(new Date().toLocaleDateString('en-IN'));
+  const [bidSubmissionStart, setBidSubmissionStart] = React.useState(new Date().toLocaleDateString('en-IN'));
+  const [bidSubmissionEnd, setBidSubmissionEnd] = React.useState(new Date().toLocaleDateString('en-IN'));
 
-  const handleChange = (newValue) => {
-    setValue(newValue);
+  const publishHandler = (newValue) => {
+    setPublish(newValue);
+      
+  };
+  const bidOpeningHandler = (newValue) => {
+    setBidOpening(newValue);
+  };
+  const bidSubmissionStartHandler = (newValue) => {
+    setBidSubmissionStart(newValue);
+  };
+  const bidSubmissionEndHandler = (newValue) => {
+    setBidSubmissionEnd(newValue);
+    console.log(publish , bidOpening , bidSubmissionStart , bidSubmissionEnd )
   };
 
   return (
@@ -24,8 +38,8 @@ export default function CriticalDate() {
             <DatePicker
               label="Publish Date"
               inputFormat="dd/MM/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={publish}
+              onChange={()=>publishHandler(publish)}
               renderInput={(params) => <TextField {...params} />}
             />
           </Grid>
@@ -33,8 +47,8 @@ export default function CriticalDate() {
             <DatePicker
               label="Bid opening date"
               inputFormat="dd/MM/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={bidOpening}
+              onChange={()=>bidOpeningHandler(bidOpening)}
               renderInput={(params) => <TextField {...params} />}
             />
           </Grid>
@@ -42,8 +56,8 @@ export default function CriticalDate() {
             <DatePicker
               label="Bid submission start date"
               inputFormat="dd/MM/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={bidSubmissionStart}
+              onChange={()=>bidSubmissionStartHandler(bidSubmissionStart)}
               renderInput={(params) => <TextField {...params} />}
             />
           </Grid>
@@ -51,8 +65,8 @@ export default function CriticalDate() {
             <DatePicker
               label="Bid submission end date"
               inputFormat="dd/MM/yyyy"
-              value={value}
-              onChange={handleChange}
+              value={bidSubmissionEnd}
+              onChange={()=>bidSubmissionEndHandler(bidSubmissionEnd)}
               renderInput={(params) => <TextField {...params} />}
             />
           </Grid>

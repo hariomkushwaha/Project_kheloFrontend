@@ -3,6 +3,25 @@ import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import TextField from "@mui/material/TextField";
 export default function TenderFeeDetail() {
+
+  const [tenderFee, setTenderFee] = React.useState("");
+    const [feePayableTo, setFeePayableTo] = React.useState("");
+    const [tenderFeeExemption, setTenderFeeExemption] = React.useState("");
+    const [feePayableAt, setFeePayableAt] = React.useState("");
+
+    const tenderFeeHandler = (event) => {
+      setTenderFee(event.target.value);
+      };
+      const feePayableToHandler = (event) => {
+        setFeePayableTo(event.target.value);
+      };
+      const tenderFeeExemptionHandler = (event) => {
+        setTenderFeeExemption(event.target.value);
+      };
+      const feePayableAtHandler = (event) => {
+        setFeePayableAt(event.target.value);
+      };
+
   return (
     <React.Fragment>
       <Typography variant="h6" gutterBottom>
@@ -19,6 +38,8 @@ export default function TenderFeeDetail() {
             autoComplete="given-name"
             variant="standard"
             type="number"
+            value={tenderFee}
+            onChange={tenderFeeHandler}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
@@ -30,6 +51,8 @@ export default function TenderFeeDetail() {
             fullWidth
             autoComplete="given-name"
             variant="standard"
+            value={feePayableTo}
+            onChange={feePayableToHandler}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
@@ -41,6 +64,8 @@ export default function TenderFeeDetail() {
             fullWidth
             autoComplete="given-name"
             variant="standard"
+            value={tenderFeeExemption}
+            onChange={tenderFeeExemptionHandler}
           />
         </Grid>
         <Grid item xs={12} sm={12}>
@@ -52,6 +77,8 @@ export default function TenderFeeDetail() {
             fullWidth
             autoComplete="given-name"
             variant="standard"
+            value={feePayableAt}
+            onChange={feePayableAtHandler}
           />
         </Grid>
       </Grid>
