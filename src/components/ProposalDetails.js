@@ -10,9 +10,19 @@ import Rating from '@mui/material/Rating';
 
 export default function ProposalDetails() {
   const [category, setCategory] = useState("service");
-  const [quality, setQuality] = useState(0);
-  const [durability, setDurability] = useState(0);
-  const [usability, setUsability] = useState(0);
+  const [quality, setQuality] = useState("");
+  const [durability, setDurability] = useState("");
+  const [usability, setUsability] = useState("");
+  
+  const qualityHandler = (e) =>{
+    setQuality(e.target.value)
+  }
+  const durabilityHandler = (e) =>{
+    setDurability(e.target.value)
+  }
+  const usabilityHandler = (e) =>{
+    setUsability(e.target.value);
+  }
 
   return (
     <>
@@ -115,43 +125,48 @@ export default function ProposalDetails() {
             type="number"
           />
         </Grid>
-        <Grid item xs={12}  md={4}>
-        <Typography component="legend">Quality</Typography>
-        </Grid>
-        <Grid item xs={12}  md={8}>
-      <Rating
-  name="simple-controlled"
-  value={quality}
-  onChange={(event, newValue) => {
-    setQuality(newValue);
-  }}
-/>
-</Grid>
-<Grid item xs={12}  md={4}>
-<Typography component="legend">Durabilty</Typography>
-</Grid>
-<Grid item xs={12}  md={8}>
+        <Grid item xs={12}>
+        <TextField
+            required
+            id="quality"
+            name="Quality"
+            label="Quality"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={qualityHandler}
+            value={quality}
+          />
 
-      <Rating
-  name="simple-controlled"
-  value={durability}
-  onChange={(event, newValue) => {
-    setDurability(newValue);
-  }}
-/>
 </Grid>
-<Grid item xs={12}  md={4}>
-
-<Typography component="legend">Usability</Typography>
+<Grid item xs={12} >
+<TextField
+            required
+            id="usability"
+            name="Usability"
+            label="Usability"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={usabilityHandler}
+            value={usability}
+          />
 </Grid>
-<Grid item xs={12}  md={8}>
-      <Rating
-  name="simple-controlled"
-  value={usability}
-  onChange={(event, newValue) => {
-    setUsability(newValue);
-  }}
-/>
+<Grid item xs={12}>
+<TextField
+            required
+            id="durability"
+            name="Durability"
+            label="Durability"
+            fullWidth
+            autoComplete="given-name"
+            variant="standard"
+            type="number"
+            onChange={durabilityHandler}
+            value={durability}
+          />
 </Grid>
 
         <Grid item xs={12} md={12}>
