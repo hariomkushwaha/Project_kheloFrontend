@@ -13,6 +13,43 @@ export default function ProposalDetails() {
   const [quality, setQuality] = useState("");
   const [durability, setDurability] = useState("");
   const [usability, setUsability] = useState("");
+  const [ge, setGe] = useState(null);
+  const [se, setSe] = useState(null);
+  const [pmexp, setPmexp] = useState(null);
+  const [dbmexp, setDbmexp] = useState(null);
+  const [coexp, setCoexp] = useState(null);
+  const [cost, setCost] = useState(null);
+  const [duration, setDuration] = useState(null);
+
+  useEffect(() => {
+    // localStorage.clear();
+    localStorage.setItem(
+      "proposalDetails",
+      JSON.stringify({
+        quality: quality,
+        durability: durability,
+        usability: usability,
+        ge: ge,
+        se: se,
+        pmexp: pmexp,
+        dbmexp: dbmexp,
+        coexp: coexp,
+        cost: cost,
+        duration: duration,
+      })
+    );
+  }, [
+    quality,
+    durability,
+    usability,
+    ge,
+    se,
+    pmexp,
+    dbmexp,
+    coexp,
+    cost,
+    duration,
+  ]);
 
   const qualityHandler = (e) => {
     setQuality(e.target.value);
@@ -41,6 +78,10 @@ export default function ProposalDetails() {
             label="General Experience"
             variant="standard"
             type="number"
+            value={ge}
+            onChange={(e) => {
+              setGe(e.target.value);
+            }}
           />
         </Grid>
         <Grid item xs={12} md={6}>
@@ -51,6 +92,10 @@ export default function ProposalDetails() {
             label="Sports Specific Experience"
             type="number"
             variant="standard"
+            value={se}
+            onChange={(e) => {
+              setSe(e.target.value);
+            }}
           />
         </Grid>
 
@@ -70,6 +115,10 @@ export default function ProposalDetails() {
                   label="Project Manager Experience"
                   variant="standard"
                   type="number"
+                  value={pmexp}
+                  onChange={(e) => {
+                    setPmexp(e.target.value);
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -80,6 +129,10 @@ export default function ProposalDetails() {
                   label="Database Admin Experience"
                   variant="standard"
                   type="number"
+                  value={dbmexp}
+                  onChange={(e) => {
+                    setDbmexp(e.target.value);
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -90,6 +143,10 @@ export default function ProposalDetails() {
                   label="Coordinator Experience"
                   variant="standard"
                   type="number"
+                  value={coexp}
+                  onChange={(e) => {
+                    setCoexp(e.target.value);
+                  }}
                 />
               </Grid>
             </>
@@ -112,6 +169,10 @@ export default function ProposalDetails() {
             // autoComplete="cc-name"
             variant="standard"
             type="number"
+            value={cost}
+            onChange={(e) => {
+              setCost(e.target.value);
+            }}
           />
         </Grid>
         <Grid item xs={12} md={12}>
@@ -123,6 +184,10 @@ export default function ProposalDetails() {
             // autoComplete="cc-number"
             variant="standard"
             type="number"
+            value={duration}
+            onChange={(e) => {
+              setDuration(e.target.value);
+            }}
           />
         </Grid>
         <Grid item xs={12}>
