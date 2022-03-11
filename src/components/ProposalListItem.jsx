@@ -1,6 +1,6 @@
 import React from "react";
-import "./css/ProposalListItem.css";
 import ProposalButton from "./ProposalBtn";
+import "./css/ProposalListItem.css";
 
 export default function ProposalListItem(props) {
   return (
