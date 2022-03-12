@@ -50,9 +50,6 @@ class SingleProductComponent extends React.Component {
           <Typography variant="body2" component="div">
             Quality : {product.Quality}
           </Typography>
-          <Typography variant="body2" component="div">
-            Total : {product.Total} /5
-          </Typography>
         </CardContent>
         <CardActions>
           {this.state.added ? (

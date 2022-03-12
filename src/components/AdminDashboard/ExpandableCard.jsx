@@ -26,7 +26,7 @@ const ExpandMore = styled((props) => {
 
 const rows = [
   {
-    proponent: "Diamond",
+    proponent: "AnujKumar",
     amount: 20000,
     completedProposals: 2,
     turnover: 100300,
@@ -34,7 +34,7 @@ const rows = [
     id: 1,
   },
   {
-    proponent: "Luna",
+    proponent: "AnkitSingh",
     amount: 120000,
     completedProposals: 2,
     turnover: 400000,
@@ -42,7 +42,7 @@ const rows = [
     id: 2,
   },
   {
-    proponent: "Hailie",
+    proponent: "RajeevRai",
     amount: 100000,
     completedProposals: 5,
     turnover: 10000,
@@ -50,7 +50,7 @@ const rows = [
     id: 3,
   },
   {
-    proponent: "Alexis Rowe",
+    proponent: "Vikas",
     amount: 500000,
     completedProposals: 9,
     turnover: 1550000,
@@ -58,7 +58,7 @@ const rows = [
     id: 4,
   },
   {
-    proponent: "Rowe",
+    proponent: "ArchanaSharma",
     amount: 5000000,
     completedProposals: 9,
     turnover: 1550000,
